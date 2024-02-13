@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/* General Styles */
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
@@ -16,8 +16,6 @@ body {
     /* Generic project styles */
     color: #3a3a3a;
     font-family: 'Lato', sans-serif;
-
-    font-family: 'Oswald', sans-serif;
 }
 
 h1,
@@ -26,11 +24,13 @@ h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #252525
+    color: #252525;
 }
+
 .hidden-heading {
-    display:none;
+    display: none;
 }
+
 /* Header */
 header {
     background-color: #ffffff;
@@ -42,14 +42,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-
 }
 
 header a {
     text-decoration: none;
     color: inherit;
 }
-
 
 #menu {
     font-size: 110%;
@@ -62,26 +60,24 @@ header a {
 }
 
 .active {
-    border-bottom: 1px solid #3a3a3a
+    border-bottom: 1px solid #3a3a3a;
 }
 
-/* Navbar Styles with dropdown toggle */
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
     background-color: #ffffff;
     width: 100%;
     left: 0;
     padding: 0 1rem;
-    box-shadow: #3a3a3a;
+    box-shadow: 0 2px 2px #3a3a3a;
     display: none;
     top: 100%;
-
 }
 
-/* Nave toggle */
+/* Nav toggle */
 #nav-toggle:checked~nav {
     display: block;
-
 }
 
 #nav-toggle {
@@ -92,15 +88,18 @@ nav {
     font-size: 2rem;
 }
 
-/* Main */
+/* Main content */
 main {
-
-    /* Make main element take up any surplus space to push footer down */
+    /* Enlarge main element to push footer down*/
     flex: 1 0 auto;
+    /* Add margin at the top to prevent content from being covered by the header */
     margin-top: 47px;
+    /* Enable flex properties for child elements */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Hero Section */
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
@@ -109,7 +108,7 @@ main {
 }
 
 #cover-text {
-    /* final rgba value sets the opacity so its transparent */
+    /* Final rgba value sets the opacity so it is semi-transparent */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
@@ -118,22 +117,18 @@ main {
     min-height: 200px;
     padding-top: 40px;
     padding-left: 10px;
-
 }
 
 #cover-text>h2,
 #cover-text>h3 {
     color: #ffffff;
-
 }
 
-/* Reasons Section */
-
+/* Reasons section */
 #reasons {
     width: 90%;
     margin: 20px auto;
 }
-
 
 #reasons h2 {
     margin-bottom: 20px;
@@ -161,7 +156,7 @@ main {
     height: 90vw;
     width: 90vw;
     margin-bottom: 20px;
-    /* Makes a Circle*/
+    /* Makes the square image into a circle */
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
@@ -173,17 +168,12 @@ main {
     justify-content: center;
 }
 
-/* Meet up times Section*/
-
+/* Meetup Times section */
 #times {
     background: url('../images/dublin-city.webp') no-repeat center/cover;
-    /*Handles responsivity without the need for a media query*/
+    /* Handles responsivity without the need for a media query */
     display: flex;
     flex-wrap: wrap;
-}
-#times h3 {
-    /* Overrides Headings color in general styles */
-    color: #fafafa;
 }
 
 #times div {
@@ -191,19 +181,78 @@ main {
     background-color: rgba(0, 0, 0, .6);
     padding: 15px;
     text-align: center;
-    /* this will not wrap on screens less than 400px wide. Each div will expand to fill the available space on its row */
+    /* This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the available space on its row */
     flex-basis: 200px;
     flex-grow: 1;
-    /* create a grid of meet up times over the background image */
+    /* Creates a grid of meetup time dives over the background image */
     border: 2px solid white;
 }
-/* Gallery page Styles */
+
+#times h3 {
+    /* Override the heading colour set in general styles */
+    color: #fafafa;
+}
+
+/* Gallery page */
 #photos img {
     width: 100%;
     line-height: 1em;
 }
+
 #photos {
     line-height: 0;
+}
+
+/* Form */
+#signup {
+    background-image: url("../images/signup-image.webp");
+    background-size: cover;
+    background-position: 75%;
+    padding: 20px 10% 0 10%;
+    flex-grow: 1;
+}
+
+
+#signup-form {
+    color: #ffffff;
+    background-color: rgba(60, 60, 60, 0.6);
+    padding: 30px;
+}
+
+
+#signup-form>h2 {
+    color: #fafafa;
+    margin-bottom: 20px;
+}
+
+
+.text-input {
+    background: transparent;
+    color: #fafafa;
+    width: 100%;
+    height: 25px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #fafafa;
+    border-radius: 2px;
+    padding: 0 5px;
+}
+
+
+.radio-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.join-button {
+    margin-top: 20px;
+    border-radius: 2px;
+    padding: 15px 32px;
+    font-size: 100%;
+    background-color: #454b1b;
+    color: #fafafa;
 }
 
 /* Footer */
@@ -220,17 +269,16 @@ main {
     padding: 5%;
     color: #3a3a3a;
 }
-/* Media Query: Large landscape phones (576px and up) */
-@media screen and (min-width: 570px) {
+
+/* Media query: large or landscape phones (576px and up) */
+@media screen and (min-width: 576px) {
     #photos {
         column-count: 2;
         column-gap: 0;
     }
-
 }
 
-/* Media query: tablets and larger (768 and up) */
-
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
     /* Header */
@@ -260,12 +308,13 @@ main {
         margin: 0 0.5rem;
     }
 
+    /* Main content */
     main {
-        /* Push main content down to accomodate larger header */
+        /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }
 
-    /*Hero */
+    /* Hero */
     #cover-text {
         width: 300px;
         right: 50px;
@@ -288,17 +337,72 @@ main {
         text-align: end;
         align-self: flex-end;
     }
+
+    /* Gallery */
     #photos {
         column-count: 3;
-        column-gap: 0;
+    }
+
+    /* Form */
+    #signup {
+        background-position: center;
+        position: relative;
+    }
+
+    #signup-form {
+        max-width: 400px;
+        position: absolute;
+        left: 10%;
+        top: 150px;
+    }
+
+    .text-input:hover {
+        border-color: #f16c6b;
+    }
+
+    .join-button:hover {
+        background-color: #fafafa;
+        color: #454b1b;
     }
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
-        border-bottom: 1px solid #3a3a3a;}
-        #photos {
-            column-count: 4;
-        }
+        border-bottom: 1px solid #3a3a3a;
     }
+
+    /* Gallery */
+    #photos {
+        column-count: 4;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    /* Reasons section */
+    #benefits {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #benefits>div {
+        flex: 1;
+    }
+
+    #benefits-image {
+        order: 0
+    }
+
+    #benefits-mental {
+        order: 1;
+    }
+
+    #benefits-mental>div {
+        align-self: flex-start;
+    }
+
+    #benefits-physical>div {
+        align-self: flex-end;
+    }
+}
